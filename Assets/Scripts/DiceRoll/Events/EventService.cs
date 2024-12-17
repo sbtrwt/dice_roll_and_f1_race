@@ -1,3 +1,4 @@
+using DiceRoll.Level;
 using Utilities.Events;
 
 namespace DiceRoll.Events
@@ -10,12 +11,12 @@ namespace DiceRoll.Events
         public EventController<bool> OnGameOver { get; private set; }
         #endregion
         #region LevelEvent
-        public EventController<int> OnLevelStart { get; private set; }
+        public EventController<LevelType> OnLevelStart { get; private set; }
         public EventController<bool> OnLevelOver { get; private set; }
         #endregion
         public EventService()
         {
-            OnGameStart = new EventController<int>();
+            OnLevelStart = new EventController<LevelType>();
             OnGameOver = new EventController<bool>();
         }
 

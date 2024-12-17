@@ -1,6 +1,7 @@
 using DiceRoll.Dice;
 using DiceRoll.Events;
 using DiceRoll.Level;
+using DiceRoll.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,7 @@ public class DiceRollGameService : MonoBehaviour
     private DiceService diceService;
     private LevelService levelService;
 
-
+    [SerializeField] private UIService uiService;
     //Scriptable Data
     [SerializeField] private DiceSO diceSO;
     [SerializeField] private LevelSO levelSO;
@@ -34,6 +35,6 @@ public class DiceRollGameService : MonoBehaviour
 
     private void InjectDependencies()
     {
-        
+        uiService.Init(eventService);
     }
 }
