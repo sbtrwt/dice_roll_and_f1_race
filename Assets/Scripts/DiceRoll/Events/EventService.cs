@@ -4,13 +4,18 @@ namespace DiceRoll.Events
 {
     public class EventService
     {
-        public EventController<int> OnMapSelected { get; private set; }
-        public EventController<int> OnWaveStart { get; private set; }
+        #region GameEvent
+        public EventController<int> OnGameStart { get; private set; }
+    
         public EventController<bool> OnGameOver { get; private set; }
+        #endregion
+        #region LevelEvent
+        public EventController<int> OnLevelStart { get; private set; }
+        public EventController<bool> OnLevelOver { get; private set; }
+        #endregion
         public EventService()
         {
-            OnMapSelected = new EventController<int>();
-            OnWaveStart = new EventController<int>();
+            OnGameStart = new EventController<int>();
             OnGameOver = new EventController<bool>();
         }
 
