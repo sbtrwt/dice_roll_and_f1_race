@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DiceFaces:
   - DiceFace: 1
-    DiceFaceSprite: {fileID: 21300000, guid: fefc410ddf6d4274bbcfbd4cb4d34be1, type: 3}
+    DiceFaceSprite: {fileID: 21300000, guid: 7ae230c4525babb44a843e083d1c30f4, type: 3}
   - DiceFace: 2
-    DiceFaceSprite: {fileID: 21300000, guid: 0ce10e73a2c00b64fa641f3a17d585c8, type: 3}
+    DiceFaceSprite: {fileID: 21300000, guid: a3c6d7462d8e43242bfead46e723b91b, type: 3}
   - DiceFace: 3
-    DiceFaceSprite: {fileID: 21300000, guid: 12bc36e223e2d1c4b804bd0689874239, type: 3}
+    DiceFaceSprite: {fileID: 21300000, guid: 729aa862b4b0bee4eb646ab0bc7d35e8, type: 3}
   - DiceFace: 4
-    DiceFaceSprite: {fileID: 21300000, guid: fd821a331d7338746bed63615e01395c, type: 3}
+    DiceFaceSprite: {fileID: 21300000, guid: e7cc74e16f4753e439fd09ee9d7b1539, type: 3}
   - DiceFace: 5
-    DiceFaceSprite: {fileID: 21300000, guid: c7e7f17218643be4082b2611b1c2fd0a, type: 3}
+    DiceFaceSprite: {fileID: 21300000, guid: f080ce55281fae84da85ad6cf6ee2b0b, type: 3}
   - DiceFace: 6
-    DiceFaceSprite: {fileID: 21300000, guid: 7d9f62c31b061214cadcfc2e9afbc812, type: 3}
+    DiceFaceSprite: {fileID: 21300000, guid: cbae72a1052ba8846b6903aae9f75846, type: 3}
   DiceViewPrefab: {fileID: 4054541107330469846, guid: 6fe750ce5fc99df4db7aee5114b188d4, type: 3}

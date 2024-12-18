@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/DiceGame.unity
+    guid: 175943600fd3b8e48b4264639866c124
+  - enabled: 1
+    path: Assets/Scenes/F1Game.unity
+    guid: 879af2d604232bf43beee982a5bc14c7
   m_configObjects: {}
