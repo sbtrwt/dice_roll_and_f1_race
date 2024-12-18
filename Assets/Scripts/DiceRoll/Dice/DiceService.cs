@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace DiceRoll.Dice
 {
@@ -25,9 +26,22 @@ namespace DiceRoll.Dice
             diceController.Init(diceSO.DiceFaces);
             SubscribeToEvents();
         }
-        public void SubscribeToEvents() { eventService.OnLevelStart.AddListener(OnLevelStart); }
-        public void UnsubscribeToEvents() { eventService.OnLevelStart.RemoveListener(OnLevelStart); }
+        public void SubscribeToEvents() 
+        {
+            eventService.OnLevelStart.AddListener(OnLevelStart);
+            eventService.OnGameStart.AddListener(OnGamelStart);
+        }
+        public void UnsubscribeToEvents()
+        {
+            eventService.OnLevelStart.AddListener(OnLevelStart);
+            eventService.OnGameStart.RemoveListener(OnGamelStart);
+        }
         public void OnLevelStart(LevelType levelType)
+        {
+            Debug.Log("Suffle Dice Roll");
+            //diceController.ShuffleDice();
+        }
+        public void OnGamelStart(LevelType levelType)
         {
             Debug.Log("Dice Roll");
             diceController.StartDiceRoll();
@@ -39,6 +53,19 @@ namespace DiceRoll.Dice
         public void SetDiceRollInterval(float interval)
         {
             diceController.SetRollInterval(interval);
+        }
+        public void SuffleDice()
+        {
+            diceController.ShuffleDice();
+        }
+        public void ShowDiceHint(Image[] diceImages)
+        {
+            int len = diceController.DiceFaceOrder.Length;
+            Debug.Log(String.Join(",", diceController.DiceFaceOrder));
+            for (int i = 0; i < len; i++)
+            {
+                diceImages[i].sprite = diceSO.DiceFaces[diceController.DiceFaceOrder[i]].DiceFaceSprite;
+            }
         }
         ~DiceService()
         {

@@ -17,11 +17,13 @@ namespace DiceRoll.Dice
         private int currentFaceIndex = 0;
         private float timer = 0f;
         private int[] diceFaceOrder = { 0, 1, 2, 3, 4, 5 };
+
+        public int[] DiceFaceOrder { get { return diceFaceOrder; } }
         public DiceController(DiceView diceViewPrefab, Transform parent)
         {
             this.diceView = UnityEngine.Object.Instantiate(diceViewPrefab, parent);
             this.diceView.Controller = this;
-
+            
         }
         public void Init(DiceFaceData[] diceFaces)
         {
@@ -50,9 +52,31 @@ namespace DiceRoll.Dice
                 // Reset the timer
                 timer = 0f;
                 // Change to the next sprite
-                SetSprite(diceFaces[diceFaceOrder[currentFaceIndex]].DiceFaceSprite);
                 currentFaceIndex = (currentFaceIndex + 1) % diceFaces.Length;
+                SetSprite(diceFaces[diceFaceOrder[currentFaceIndex]].DiceFaceSprite);
 
+            }
+        }
+
+        public void ShuffleDice() 
+        {
+            Shuffle(diceFaceOrder); 
+            //set first dice face
+            SetSprite(diceFaces[diceFaceOrder[currentFaceIndex]].DiceFaceSprite);
+            Debug.Log(String.Join(",", diceFaceOrder));
+        }
+        public void Shuffle<T>(T[] array)
+        {
+            System.Random random = new System.Random();
+            for (int i = array.Length - 1; i > 0; i--)
+            {
+                // Generate a random index
+                int j = random.Next(0, i + 1);
+
+                // Swap elements at indices i and j
+                T temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
             }
         }
         public DiceFace GetCurrentDiceFace()

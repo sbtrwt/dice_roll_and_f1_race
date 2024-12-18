@@ -1,5 +1,6 @@
 using DiceRoll.Events;
 using DiceRoll.Level;
+using DiceRoll.Timer;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,16 +14,24 @@ namespace DiceRoll.Player
         private int target;
         private int lifeCount;
         private int currentLifeCount;
-
+        private int[] scoreTime;
 
         private EventService eventService;
+        private TimerService timerService;
 
         public int Score { get { return score; } }
         public int Target { get { return target; } }
         public int Lives { get { return currentLifeCount; } }
+        public int Stars { get { return starCount; } }
         public PlayerService()
         {
 
+        }
+        public void Init(EventService eventService, TimerService timerService)
+        {
+            this.eventService = eventService;
+            this.timerService = timerService;
+            SubscribeToEvents();
         }
         public void SubscribeToEvents() { 
             eventService.OnLevelStart.AddListener(OnLevelStart);
@@ -45,6 +54,8 @@ namespace DiceRoll.Player
             AddLife(-1);
             if (IsGameOver())
             {
+                if (score >= target)
+                { CalculateStars(); }
                 eventService.OnGameOver.InvokeEvent(true);
             }
         }
@@ -52,11 +63,7 @@ namespace DiceRoll.Player
         {
             Reset();
         }
-        public void Init(EventService eventService)
-        {
-            this.eventService = eventService;
-            SubscribeToEvents();
-        }
+       
         public void AddScore(int addValue)
         {
             score += addValue;
@@ -70,7 +77,10 @@ namespace DiceRoll.Player
             this.lifeCount = lifeCount;
             currentLifeCount = lifeCount;
         }
-
+        public void SetScoreTime(int[] scoreTime)
+        {
+            this.scoreTime = scoreTime;
+        }
         private bool IsGameOver()
         {
             return currentLifeCount <= 0 || score >= target;
@@ -79,6 +89,23 @@ namespace DiceRoll.Player
         {
             score = 0;
             starCount = 0;
+        }
+        public void CalculateStars() 
+        {
+            int length = scoreTime.Length;
+            int count = 0;
+            while (count < length)
+            {
+                if (timerService.TimeTaken > scoreTime[starCount])
+                {
+                    count++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            starCount = length - count;
         }
         public void AddLife(int lifeValue)
         {

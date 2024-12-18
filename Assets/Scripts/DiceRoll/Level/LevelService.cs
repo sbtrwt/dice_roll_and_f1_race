@@ -62,7 +62,8 @@ namespace DiceRoll.Level
         {
             playerService.Reset();
             playerService.SetLifeCount(currentLevelData.LifeCount);
-            playerService.SetTarget(currentLevelData.MaxTargetScore);
+            playerService.SetTarget(UnityEngine.Random.Range(currentLevelData.MinTargetScore, currentLevelData.MaxTargetScore));
+            playerService.SetScoreTime(currentLevelData.ScoreTime);
         }
         private void LoadDice() 
         {

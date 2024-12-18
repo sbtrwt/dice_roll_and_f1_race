@@ -1166,7 +1166,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c7e7f17218643be4082b2611b1c2fd0a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f080ce55281fae84da85ad6cf6ee2b0b, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1241,7 +1241,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7d9f62c31b061214cadcfc2e9afbc812, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cbae72a1052ba8846b6903aae9f75846, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2128,7 +2128,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0ce10e73a2c00b64fa641f3a17d585c8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a3c6d7462d8e43242bfead46e723b91b, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2282,7 +2282,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fefc410ddf6d4274bbcfbd4cb4d34be1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7ae230c4525babb44a843e083d1c30f4, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2394,7 +2394,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fd821a331d7338746bed63615e01395c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e7cc74e16f4753e439fd09ee9d7b1539, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2845,11 +2845,25 @@ MonoBehaviour:
   - {fileID: 2122904820}
   levelStartPanel: {fileID: 270079741}
   levelStartButton: {fileID: 1605542113}
+  diceImages:
+  - {fileID: 1202184540}
+  - {fileID: 1149473365}
+  - {fileID: 1842127214}
+  - {fileID: 1265226251}
+  - {fileID: 679830615}
+  - {fileID: 681588944}
   levelActionPanel: {fileID: 2034956649}
-  AddButton: {fileID: 2075280816}
+  addButton: {fileID: 2075280816}
   scoreText: {fileID: 1190992178}
   targetText: {fileID: 417221625}
   livesText: {fileID: 1893479262}
+  gameOverPanel: {fileID: 682658061}
+  menuButton: {fileID: 5260791}
+  retryButton: {fileID: 783292160}
+  finalStars:
+  - {fileID: 225975446}
+  - {fileID: 655935011}
+  - {fileID: 1918787269}
 --- !u!1 &1605542111
 GameObject:
   m_ObjectHideFlags: 0
@@ -3369,7 +3383,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 12bc36e223e2d1c4b804bd0689874239, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 729aa862b4b0bee4eb646ab0bc7d35e8, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

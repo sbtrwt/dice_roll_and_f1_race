@@ -25,6 +25,7 @@ namespace DiceRoll.UI
         [Header("Level Start Panel")]
         [SerializeField] private GameObject levelStartPanel;
         [SerializeField] private Button levelStartButton;
+        [SerializeField] private Image[] diceImages;
 
         [Header("Level Action Panel")]
         [SerializeField] private GameObject levelActionPanel;
@@ -37,6 +38,7 @@ namespace DiceRoll.UI
         [SerializeField] private GameObject gameOverPanel;
         [SerializeField] private Button menuButton;
         [SerializeField] private Button retryButton;
+        [SerializeField] private GameObject[] finalStars;
 
         private int score;
 
@@ -79,6 +81,8 @@ namespace DiceRoll.UI
             {
                 levelActionPanel.SetActive(false);
                 gameOverPanel.SetActive(true);
+                ShowStars(finalStars.Length, false);
+                ShowStars(playerService.Stars,true);
             }
         }
 
@@ -103,6 +107,8 @@ namespace DiceRoll.UI
             targetText.text = playerService.Target.ToString();
             livesText.text = playerService.Lives.ToString();
             scoreText.text = playerService.Score.ToString();
+            //diceService.SuffleDice();
+            diceService.ShowDiceHint(diceImages);
         }
 
 
@@ -112,6 +118,7 @@ namespace DiceRoll.UI
             currentLevelType = levelType;
             levelSelectionPanel.SetActive(false);
             levelStartPanel.SetActive(true);
+            diceService.SuffleDice();
         }
 
         private void OnGameStart()
@@ -132,6 +139,13 @@ namespace DiceRoll.UI
         {
             gameOverPanel.SetActive(false);
             levelSelectionPanel.SetActive(true);
+        }
+        private void ShowStars(int count, bool isShow)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                finalStars[i].SetActive(isShow);
+            }
         }
         ~UIService()
         {

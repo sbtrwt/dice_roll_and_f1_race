@@ -41,7 +41,7 @@ public class DiceRollGameService : MonoBehaviour
     private void InjectDependencies()
     {
         uiService.Init(eventService,diceService, playerService);
-        playerService.Init(eventService);
+        playerService.Init(eventService,timerService);
         timerService.Init(eventService);
         levelService.Init(eventService, diceService, timerService,playerService);
         diceService.Init(eventService);
