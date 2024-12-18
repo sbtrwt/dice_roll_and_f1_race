@@ -13,5 +13,9 @@ namespace DiceRoll.Dice
         {
             spriteRenderer.sprite = sprite;
         }
+        private void Update()
+        {
+            Controller?.ChangeSprite();
+        }
     }
 }

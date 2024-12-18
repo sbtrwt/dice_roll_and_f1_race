@@ -25,3 +25,4 @@ MonoBehaviour:
     DiceFaceSprite: {fileID: 21300000, guid: c7e7f17218643be4082b2611b1c2fd0a, type: 3}
   - DiceFace: 6
     DiceFaceSprite: {fileID: 21300000, guid: 7d9f62c31b061214cadcfc2e9afbc812, type: 3}
+  DiceViewPrefab: {fileID: 4054541107330469846, guid: 6fe750ce5fc99df4db7aee5114b188d4, type: 3}

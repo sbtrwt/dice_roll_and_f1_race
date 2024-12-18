@@ -8,6 +8,7 @@ namespace DiceRoll.Dice
     public class DiceSO : ScriptableObject
     {
         public DiceFaceData[] DiceFaces;
+        public DiceView DiceViewPrefab;
     } 
 
     [Serializable]

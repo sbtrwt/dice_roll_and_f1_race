@@ -19,6 +19,8 @@ public class DiceRollGameService : MonoBehaviour
     //Scriptable Data
     [SerializeField] private DiceSO diceSO;
     [SerializeField] private LevelSO levelSO;
+
+    [SerializeField] private Transform diceContainer;
     // Start is called before the first frame update
     private void Start()
     {
@@ -30,15 +32,16 @@ public class DiceRollGameService : MonoBehaviour
     {
         eventService = new EventService();
         playerService = new PlayerService();
-        diceService = new DiceService(diceSO);
+        diceService = new DiceService(diceSO, diceContainer);
         levelService = new LevelService(levelSO);
       
     }
 
     private void InjectDependencies()
     {
-        uiService.Init(eventService);
+        uiService.Init(eventService,diceService);
         timerService.Init(eventService);
         levelService.Init(eventService, diceService, timerService);
+        diceService.Init(eventService);
     }
 }

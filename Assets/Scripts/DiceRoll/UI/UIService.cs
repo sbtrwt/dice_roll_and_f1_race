@@ -1,3 +1,4 @@
+using DiceRoll.Dice;
 using DiceRoll.Events;
 using DiceRoll.Level;
 using DiceRoll.UI;
@@ -12,6 +13,7 @@ namespace DiceRoll.UI
     public class UIService : MonoBehaviour
     {
         private EventService eventService;
+        private DiceService diceService;
 
         [Header("Level Selection Panel")]
         [SerializeField] private GameObject levelSelectionPanel;
@@ -25,15 +27,30 @@ namespace DiceRoll.UI
         [Header("Level Action Panel")]
         [SerializeField] private GameObject levelActionPanel;
         [SerializeField] private Button AddButton;
+        [SerializeField] private Text scoreText;
+
+        private int score;
 
         private LevelType currentLevelType;
         private void Start()
         {
             levelStartButton.onClick.AddListener(OnGameStart);
+            AddButton.onClick.AddListener(OnAddClick);
+
         }
-        public void Init(EventService eventService)
+
+        private void OnAddClick()
+        {
+            Debug.Log("On add click");
+            score += (int)diceService.GetCurrentDiceFace();
+            scoreText.text = $"{score}";
+        }
+
+        public void Init(EventService eventService, DiceService diceService)
         {
             this.eventService = eventService;
+            this.diceService = diceService;
+
             InitLevelSelectionButtons();
             SubscribeToEvents();
 

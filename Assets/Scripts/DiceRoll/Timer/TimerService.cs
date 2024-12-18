@@ -35,8 +35,8 @@ namespace DiceRoll.Timer
         }
         public void UnsubscribeToEvents() 
         { 
-            eventService.OnGameStart.RemoveListener(OnGameStart);
-            eventService.OnGameOver.RemoveListener(OnGameOver);
+            eventService?.OnGameStart.RemoveListener(OnGameStart);
+            eventService?.OnGameOver.RemoveListener(OnGameOver);
 
         }
         private void OnGameStart(LevelType levelType)
