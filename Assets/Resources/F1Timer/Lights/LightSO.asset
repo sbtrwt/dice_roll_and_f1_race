@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737ead9f1fa8ca14e93b25c091c585d5, type: 3}
+  m_Name: LightSO
+  m_EditorClassIdentifier: 
+  Lights:
+  - LightCount: 1
+    image: {fileID: 21300000, guid: 2d927693cbfffba4c9f7e8b40f360a71, type: 3}
+  - LightCount: 2
+    image: {fileID: 21300000, guid: f16c9b1036489e8489f1684ff36acd78, type: 3}
+  - LightCount: 3
+    image: {fileID: 21300000, guid: 97871017aabe0544dae19f717df45f5d, type: 3}
+  - LightCount: 4
+    image: {fileID: 21300000, guid: 1a9672d127aea824a975528fec869dd8, type: 3}
+  - LightCount: 5
+    image: {fileID: 21300000, guid: 3209ba38a5debb347b635736a8fc4f3a, type: 3}
+  - LightCount: 6
+    image: {fileID: 21300000, guid: c05dc842c01b7ce4eaad9f3348df3873, type: 3}
