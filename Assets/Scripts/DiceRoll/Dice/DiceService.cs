@@ -36,6 +36,10 @@ namespace DiceRoll.Dice
         {
             return diceController.GetCurrentDiceFace();
         }
+        public void SetDiceRollInterval(float interval)
+        {
+            diceController.SetRollInterval(interval);
+        }
         ~DiceService()
         {
             UnsubscribeToEvents();

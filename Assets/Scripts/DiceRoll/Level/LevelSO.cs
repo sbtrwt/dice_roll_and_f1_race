@@ -16,7 +16,9 @@ namespace DiceRoll.Level
     {
         public LevelType LevelType;
         public float DiceRollInterval;
-        public int TargetScore;
+        public int MinTargetScore;
+        public int MaxTargetScore;
+        public int LifeCount;
         public int[] ScoreTime;
     }
 

@@ -1,6 +1,7 @@
 using DiceRoll.Dice;
 using DiceRoll.Events;
 using DiceRoll.Level;
+using DiceRoll.Player;
 using DiceRoll.Timer;
 using DiceRoll.UI;
 using System.Collections;
@@ -39,9 +40,10 @@ public class DiceRollGameService : MonoBehaviour
 
     private void InjectDependencies()
     {
-        uiService.Init(eventService,diceService);
+        uiService.Init(eventService,diceService, playerService);
+        playerService.Init(eventService);
         timerService.Init(eventService);
-        levelService.Init(eventService, diceService, timerService);
+        levelService.Init(eventService, diceService, timerService,playerService);
         diceService.Init(eventService);
     }
 }
