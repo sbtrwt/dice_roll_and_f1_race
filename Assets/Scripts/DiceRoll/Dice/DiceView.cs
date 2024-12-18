@@ -6,6 +6,12 @@ namespace DiceRoll.Dice
 {
     public class DiceView : MonoBehaviour
     {
+        [SerializeField] private SpriteRenderer spriteRenderer;
         public DiceController Controller;
+
+        public void SetSprite(Sprite sprite)
+        {
+            spriteRenderer.sprite = sprite;
+        }
     }
 }

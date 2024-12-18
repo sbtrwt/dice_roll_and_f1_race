@@ -26,9 +26,10 @@ namespace DiceRoll.UI
         [SerializeField] private GameObject levelActionPanel;
         [SerializeField] private Button AddButton;
 
+        private LevelType currentLevelType;
         private void Start()
         {
-            levelStartButton.onClick.AddListener(OnLevelStart);
+            levelStartButton.onClick.AddListener(OnGameStart);
         }
         public void Init(EventService eventService)
         {
@@ -42,14 +43,16 @@ namespace DiceRoll.UI
         private void OnLevelStart(LevelType levelType)
         {
             Debug.Log("On level start :" + levelType);
+            currentLevelType = levelType;
             levelSelectionPanel.SetActive(false); 
             levelStartPanel.SetActive(true);
         }
 
-        private void OnLevelStart()
+        private void OnGameStart()
         {
             levelStartPanel.SetActive(false);
             levelActionPanel.SetActive(true);
+            eventService.OnGameStart.InvokeEvent(currentLevelType);
         }
         public void InitLevelSelectionButtons()
         {

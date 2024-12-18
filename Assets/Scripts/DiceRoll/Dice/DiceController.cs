@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace DiceRoll.Dice
 {
@@ -13,6 +14,10 @@ namespace DiceRoll.Dice
         {
             diceView = UnityEngine.Object.Instantiate(diceView);
             diceView.Controller = this;
+        }
+        public void SetSprite(Sprite sprite)
+        {
+            diceView.SetSprite(sprite);
         }
     }
 }
